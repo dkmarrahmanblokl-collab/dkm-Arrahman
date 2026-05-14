@@ -4,7 +4,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DKM Ar-Rahman - Masjid Ar-Rahman Blok L</title>
-<link href="./DKM Ar-Rahman - Masjid Ar-Rahman Blok L_files/css2" rel="stylesheet">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -150,12 +150,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hijau2);
   <div class="nav-inner">
     <div class="nav-logo">🕌 <span>DKM</span> Ar-Rahman</div>
     <div class="nav-links">
-      <a onclick="showPage(&#39;beranda&#39;)" class="" id="nav-beranda">Beranda</a>
+      <a onclick="showPage(&#39;beranda&#39;)" class="active" id="nav-beranda">Beranda</a>
       <a onclick="showPage(&#39;jadwal&#39;)" id="nav-jadwal" class="">Jadwal Sholat</a>
       <a onclick="showPage(&#39;kegiatan&#39;)" id="nav-kegiatan" class="">Kegiatan</a>
       <a onclick="showPage(&#39;pengurus&#39;)" id="nav-pengurus" class="">Pengurus</a>
       <a onclick="showPage(&#39;keuangan&#39;)" id="nav-keuangan" class="">Keuangan</a>
-      <a onclick="showPage(&#39;sejarah&#39;)" id="nav-sejarah" class="active">Sejarah</a>
+      <a onclick="showPage(&#39;sejarah&#39;)" id="nav-sejarah" class="">Sejarah</a>
       <a onclick="showPage(&#39;ketua&#39;)" id="nav-ketua" class="">Ketua DKM</a>
       <a onclick="showLogin()" class="btn-login" id="nav-login" style="background: rgb(39, 174, 96);">✅ Admin</a>
     </div>
@@ -163,7 +163,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hijau2);
 </nav>
 
 <!-- ======== BERANDA ======== -->
-<div class="page" id="page-beranda">
+<div class="page active" id="page-beranda">
   <div class="hero">
     <div class="badge">Perum Kota Mega Regency Blok L • RW.010</div>
     <h1>Masjid Ar-Rahman</h1>
@@ -213,8 +213,8 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hijau2);
   <div class="alert alert-info">📍 Wilayah: Serang Baru, Kabupaten Bekasi — Koordinat: 6.38°S 107.10°E</div>
   <div class="card" style="margin-bottom:1.25rem">
     <div id="countdown-wrap" class="countdown-box">
-      <div><div style="font-size:.75rem;color:var(--teks2);font-weight:600">Waktu Sholat Berikutnya</div><div style="font-size:1.1rem;font-weight:700;color:var(--hijau)" id="next-sholat-name">Ashar</div></div>
-      <div style="font-size:1.8rem;font-weight:700;color:var(--hijau);font-variant-numeric:tabular-nums" id="countdown-timer">00:48:05</div>
+      <div><div style="font-size:.75rem;color:var(--teks2);font-weight:600">Waktu Sholat Berikutnya</div><div style="font-size:1.1rem;font-weight:700;color:var(--hijau)" id="next-sholat-name">Subuh</div></div>
+      <div style="font-size:1.8rem;font-weight:700;color:var(--hijau);font-variant-numeric:tabular-nums" id="countdown-timer">06:17:06</div>
     </div>
     <div class="sholat-grid" id="sholat-full" style="grid-template-columns:repeat(6,1fr)"><div class="sholat-item"><div class="sholat-nama">Subuh</div><div class="sholat-waktu">04:17</div></div><div class="sholat-item"><div class="sholat-nama">Terbit</div><div class="sholat-waktu">05:39</div></div><div class="sholat-item active-waktu"><div class="sholat-nama">Dzuhur</div><div class="sholat-waktu">12:02</div></div><div class="sholat-item"><div class="sholat-nama">Ashar</div><div class="sholat-waktu">15:27</div></div><div class="sholat-item"><div class="sholat-nama">Maghrib</div><div class="sholat-waktu">18:04</div></div><div class="sholat-item"><div class="sholat-nama">`Isya</div><div class="sholat-waktu">19:15</div></div></div>
   </div>
@@ -431,7 +431,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hijau2);
 </div>
 
 <!-- ======== SEJARAH ======== -->
-<div class="page active" id="page-sejarah">
+<div class="page" id="page-sejarah">
   <div class="section-header"><h2>Sejarah DKM Ar-Rahman</h2></div>
   <div class="grid-2">
     <div class="card">
@@ -510,7 +510,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hijau2);
   </div>
 </div>
 
-<script src="./DKM Ar-Rahman - Masjid Ar-Rahman Blok L_files/chart.umd.min.js.download"></script>
+<script src="./index_files/chart.umd.min.js.download"></script>
 <script>
 // ===================== DATA =====================
 let isAdmin = false;
@@ -552,22 +552,21 @@ const dataPengurus = [
 ];
 
 const dataKetua = [
-  {no:1,nama:'(Ketua Periode 1)',periode:'2009 – 2012',aktif:false},
-  {no:2,nama:'(Ketua Periode 2)',periode:'2012 – 2015',aktif:false},
-  {no:3,nama:'(Ketua Periode 3)',periode:'2015 – 2018',aktif:false},
-  {no:4,nama:'(Ketua Periode 4)',periode:'2018 – 2021',aktif:false},
-  {no:5,nama:'(Ketua Periode 5)',periode:'2021 – 2026',aktif:false}
-  {no:6,nama:'Maruloh',periode:'2026 – 2031',aktif:true},
+  {no:1,nama:'(Ketua Periode 1)',periode:'1990 – 1995',aktif:false},
+  {no:2,nama:'(Ketua Periode 2)',periode:'1995 – 2001',aktif:false},
+  {no:3,nama:'(Ketua Periode 3)',periode:'2001 – 2011',aktif:false},
+  {no:4,nama:'(Ketua Periode 4)',periode:'2011 – 2026',aktif:false},
+  {no:5,nama:'Maruloh',periode:'2026 – 2031',aktif:true},
 ];
 
 const dataSejarah = [
-  {thn:'2005',txt:'Pembangunan mushola pertama secara swadaya oleh warga Blok L Perum Kota Mega Regency.'},
-  {thn:'2009',txt:'Mushola resmi ditingkatkan statusnya menjadi masjid dan diberi nama Ar-Rahman atas musyawarah warga.'},
-  {thn:'2012',txt:'Renovasi besar pertama: perluasan area sholat utama dan pembangunan tempat wudhu permanen.'},
-  {thn:'2015',txt:'Pembentukan Taman Pendidikan Al-Quran (TPA) Ar-Rahman untuk anak-anak warga sekitar.'},
-  {thn:'2021',txt:'Pembangunan lantai dua masjid untuk meningkatkan kapasitas jamaah dan ruang kegiatan.'},
-  {thn:'2020',txt:'Digitalisasi administrasi DKM, pemasangan sound system, dan AC pada area sholat utama.'},
-  {thn:'2021',txt:'Masjid Ar-Rahman aktif membantu distribusi sembako untuk warga terdampak pandemi Covid-19.'},
+  {thn:'1990',txt:'Pembangunan mushola pertama secara swadaya oleh warga Blok L Perum Kota Mega Regency.'},
+  {thn:'1995',txt:'Mushola resmi ditingkatkan statusnya menjadi masjid dan diberi nama Ar-Rahman atas musyawarah warga.'},
+  {thn:'2001',txt:'Renovasi besar pertama: perluasan area sholat utama dan pembangunan tempat wudhu permanen.'},
+  {thn:'2005',txt:'Pembentukan Taman Pendidikan Al-Quran (TPA) Ar-Rahman untuk anak-anak warga sekitar.'},
+  {thn:'2011',txt:'Pembangunan lantai dua masjid untuk meningkatkan kapasitas jamaah dan ruang kegiatan.'},
+  {thn:'2015',txt:'Digitalisasi administrasi DKM, pemasangan sound system, dan AC pada area sholat utama.'},
+  {thn:'2020',txt:'Masjid Ar-Rahman aktif membantu distribusi sembako untuk warga terdampak pandemi Covid-19.'},
   {thn:'2026',txt:'Pemilihan Ketua DKM Periode ke-5 secara demokratis. Bpk. Maruloh terpilih dengan 99 suara dari 263 suara yang masuk.'},
 ];
 
