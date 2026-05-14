@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/MEGA/Downloads/dkm_arrahman_website.html -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKM Ar-Rahman - Masjid Ar-Rahman Blok L</title>
+<link href="./DKM Ar-Rahman - Masjid Ar-Rahman Blok L_files/css2" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --hijau:#1a5c3a;--hijau2:#2d7a52;--hijau3:#e8f5ee;--emas:#c9a227;--emas2:#f0c84a;
+  --bg:#f7f5f0;--putih:#fff;--teks:#1a1a1a;--teks2:#555;--teks3:#888;
+  --border:#e0dbd0;--radius:12px;--shadow:0 2px 16px rgba(0,0,0,0.08);
+}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--teks);min-height:100vh;font-size:14px}
+/* NAVBAR */
+nav{background:var(--hijau);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;padding:0 1.5rem;height:60px;gap:1rem}
+.nav-logo{font-family:'Amiri',serif;color:#fff;font-size:1.25rem;font-weight:700;white-space:nowrap}
+.nav-logo span{color:var(--emas2)}
+.nav-links{display:flex;gap:4px;flex:1;justify-content:center;flex-wrap:wrap}
+.nav-links a{color:rgba(255,255,255,0.85);text-decoration:none;padding:6px 10px;border-radius:8px;font-size:13px;font-weight:500;transition:.2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.15);color:#fff}
+.btn-login{background:var(--emas);color:#000 !important;font-weight:700 !important;padding:6px 14px !important;border-radius:20px !important}
+.btn-login:hover{background:var(--emas2) !important}
+/* PAGES */
+.page{display:none;max-width:1100px;margin:0 auto;padding:2rem 1.5rem}
+.page.active{display:block}
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--hijau) 0%,var(--hijau2) 60%,#3d9b6a 100%);border-radius:16px;padding:3rem 2.5rem;color:#fff;margin-bottom:2rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,0.04)}
+.hero::after{content:'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ';font-family:'Amiri',serif;font-size:1.6rem;color:rgba(255,255,255,0.15);position:absolute;bottom:1rem;right:1.5rem}
+.hero h1{font-family:'Amiri',serif;font-size:2.2rem;margin-bottom:.5rem}
+.hero p{opacity:.85;font-size:.95rem;max-width:500px;line-height:1.6}
+.hero .badge{display:inline-block;background:var(--emas);color:#000;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:.75rem}
+/* GRID CARDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.card{background:var(--putih);border-radius:var(--radius);border:1px solid var(--border);padding:1.25rem;box-shadow:var(--shadow)}
+.card-title{font-size:.8rem;color:var(--teks3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem;font-weight:600}
+/* JADWAL SHOLAT */
+.sholat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.75rem;margin:1rem 0}
+.sholat-item{background:var(--putih);border-radius:10px;border:1px solid var(--border);padding:.75rem;text-align:center}
+.sholat-item.active-waktu{background:var(--hijau);border-color:var(--hijau)}
+.sholat-item.active-waktu .sholat-nama,.sholat-item.active-waktu .sholat-waktu{color:#fff}
+.sholat-nama{font-size:.75rem;color:var(--teks3);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.sholat-waktu{font-size:1.1rem;font-weight:700;color:var(--hijau);margin-top:3px}
+.sholat-item.active-waktu .sholat-waktu{color:var(--emas2)}
+.countdown-box{background:var(--hijau3);border-radius:10px;padding:1rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+/* KEGIATAN */
+.kegiatan-list{display:flex;flex-direction:column;gap:.75rem}
+.kegiatan-item{background:var(--putih);border-radius:10px;border:1px solid var(--border);padding:1rem 1.25rem;display:flex;align-items:flex-start;gap:1rem}
+.kegiatan-tanggal{background:var(--hijau);color:#fff;border-radius:8px;padding:.4rem .6rem;text-align:center;min-width:44px}
+.kegiatan-tanggal .tgl{font-size:1.1rem;font-weight:700;line-height:1}
+.kegiatan-tanggal .bln{font-size:.65rem;text-transform:uppercase;opacity:.85}
+.kegiatan-info h4{font-size:.9rem;font-weight:600;margin-bottom:2px}
+.kegiatan-info p{font-size:.8rem;color:var(--teks2)}
+.badge-kegiatan{font-size:.68rem;padding:2px 8px;border-radius:10px;font-weight:600;display:inline-block;margin-top:4px}
+.badge-rutin{background:#e8f5ee;color:var(--hijau2)}
+.badge-khusus{background:#fff3cd;color:#856404}
+/* PENGURUS */
+.pengurus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.pengurus-card{background:var(--putih);border-radius:12px;border:1px solid var(--border);padding:1.25rem;text-align:center}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--hijau);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;margin:0 auto .75rem;font-family:'Amiri',serif}
+.avatar.ketua{background:var(--emas);color:#000}
+.pengurus-nama{font-weight:600;font-size:.88rem;margin-bottom:3px}
+.pengurus-jabatan{font-size:.75rem;color:var(--teks2)}
+.jabatan-badge{font-size:.68rem;padding:2px 8px;border-radius:10px;background:var(--hijau3);color:var(--hijau2);font-weight:600;display:inline-block;margin-top:5px}
+/* KAS */
+.kas-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.5rem}
+.kas-stat{background:var(--putih);border-radius:12px;border:1px solid var(--border);padding:1rem}
+.kas-stat .label{font-size:.75rem;color:var(--teks3);font-weight:600;margin-bottom:.25rem}
+.kas-stat .value{font-size:1.3rem;font-weight:700}
+.kas-stat.masuk .value{color:#1a7a2e}
+.kas-stat.keluar .value{color:#c0392b}
+.kas-stat.saldo .value{color:var(--hijau)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+.form-row.full{grid-template-columns:1fr}
+label{font-size:.78rem;font-weight:600;color:var(--teks2);display:block;margin-bottom:4px}
+input,select,textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:.6rem .75rem;font-size:.875rem;font-family:inherit;background:var(--bg);transition:.2s;color:var(--teks)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hijau2);background:var(--putih)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:.6rem 1.25rem;border-radius:8px;font-size:.85rem;font-weight:600;border:none;cursor:pointer;transition:.2s;font-family:inherit}
+.btn-hijau{background:var(--hijau);color:#fff}.btn-hijau:hover{background:var(--hijau2)}
+.btn-emas{background:var(--emas);color:#000}.btn-emas:hover{background:var(--emas2)}
+.btn-outline{background:transparent;color:var(--hijau);border:1.5px solid var(--hijau)}.btn-outline:hover{background:var(--hijau3)}
+.btn-merah{background:#e74c3c;color:#fff}.btn-merah:hover{background:#c0392b}
+.trans-table{width:100%;border-collapse:collapse;margin-top:1rem}
+.trans-table th{background:var(--hijau3);color:var(--hijau);font-size:.78rem;padding:.6rem .75rem;text-align:left;font-weight:700}
+.trans-table td{padding:.6rem .75rem;border-bottom:1px solid var(--border);font-size:.83rem}
+.trans-table tr:hover td{background:#fafaf7}
+.pill{padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700}
+.pill.masuk{background:#d4edda;color:#1a7a2e}
+.pill.keluar{background:#f8d7da;color:#721c24}
+/* SEJARAH */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:.45rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--hijau),var(--hijau3))}
+.tl-item{position:relative;margin-bottom:1.5rem}
+.tl-dot{position:absolute;left:-1.65rem;top:.2rem;width:14px;height:14px;border-radius:50%;background:var(--hijau);border:3px solid var(--putih);box-shadow:0 0 0 2px var(--hijau)}
+.tl-tahun{font-size:.75rem;font-weight:700;color:var(--hijau);margin-bottom:2px}
+.tl-konten{font-size:.88rem;line-height:1.6;color:var(--teks)}
+/* KETUA LIST */
+.ketua-list{display:flex;flex-direction:column;gap:.75rem}
+.ketua-item{background:var(--putih);border-radius:12px;border:1px solid var(--border);padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem}
+.ketua-no{width:36px;height:36px;border-radius:50%;background:var(--hijau3);color:var(--hijau);font-weight:700;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ketua-no.aktif{background:var(--emas);color:#000}
+.ketua-nama{font-weight:600;font-size:.9rem}
+.ketua-periode{font-size:.78rem;color:var(--teks2)}
+/* LOGIN MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:200;display:none}
+.modal-overlay.show{display:flex}
+.modal{background:var(--putih);border-radius:16px;padding:2rem;width:340px;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
+.modal h2{font-family:'Amiri',serif;color:var(--hijau);font-size:1.4rem;margin-bottom:.25rem}
+.modal p{font-size:.8rem;color:var(--teks2);margin-bottom:1.5rem}
+/* ADMIN BAR */
+.admin-bar{background:var(--hijau);color:#fff;padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between;font-size:.8rem}
+.admin-bar span{font-weight:600}
+/* ALERT */
+.alert{border-radius:8px;padding:.75rem 1rem;font-size:.83rem;margin-bottom:1rem}
+.alert-success{background:#d4edda;color:#155724;border:1px solid #c3e6cb}
+.alert-info{background:var(--hijau3);color:var(--hijau);border:1px solid #b8dcc8}
+/* SECTION HEADER */
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.section-header h2{font-family:'Amiri',serif;font-size:1.4rem;color:var(--hijau)}
+.divider{height:2px;background:linear-gradient(to right,var(--hijau),transparent);border:none;margin:1.5rem 0}
+/* STAT STRIP */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.stat-box{background:var(--putih);border-radius:12px;border:1px solid var(--border);padding:1rem;text-align:center}
+.stat-box .ico{font-size:1.5rem;margin-bottom:.5rem}
+.stat-box .num{font-size:1.4rem;font-weight:700;color:var(--hijau)}
+.stat-box .lbl{font-size:.72rem;color:var(--teks3);font-weight:600}
+@media(max-width:700px){
+  .sholat-grid{grid-template-columns:repeat(3,1fr)}
+  .grid-2,.grid-3,.kas-summary,.stat-strip{grid-template-columns:1fr 1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .hero h1{font-size:1.5rem}
+  .nav-links a{padding:4px 7px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<div id="adminBar" class="admin-bar" style="display: flex;">
+  <span>🔒 Mode Admin — Pengurus DKM Ar-Rahman</span>
+  <button class="btn" style="background:rgba(255,255,255,0.2);color:#fff;padding:4px 12px;font-size:.78rem" onclick="logout()">Keluar</button>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🕌 <span>DKM</span> Ar-Rahman</div>
+    <div class="nav-links">
+      <a onclick="showPage(&#39;beranda&#39;)" class="" id="nav-beranda">Beranda</a>
+      <a onclick="showPage(&#39;jadwal&#39;)" id="nav-jadwal" class="">Jadwal Sholat</a>
+      <a onclick="showPage(&#39;kegiatan&#39;)" id="nav-kegiatan" class="">Kegiatan</a>
+      <a onclick="showPage(&#39;pengurus&#39;)" id="nav-pengurus" class="">Pengurus</a>
+      <a onclick="showPage(&#39;keuangan&#39;)" id="nav-keuangan" class="">Keuangan</a>
+      <a onclick="showPage(&#39;sejarah&#39;)" id="nav-sejarah" class="active">Sejarah</a>
+      <a onclick="showPage(&#39;ketua&#39;)" id="nav-ketua" class="">Ketua DKM</a>
+      <a onclick="showLogin()" class="btn-login" id="nav-login" style="background: rgb(39, 174, 96);">✅ Admin</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ======== BERANDA ======== -->
+<div class="page" id="page-beranda">
+  <div class="hero">
+    <div class="badge">Perum Kota Mega Regency Blok L • RW.010</div>
+    <h1>Masjid Ar-Rahman</h1>
+    <p>Desa Sukaragam, Kec. Serang Baru, Kab. Bekasi<br>Bersama memakmurkan masjid, meraih ridho Allah ﷻ</p>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-box"><div class="ico">👥</div><div class="num">263</div><div class="lbl">Jamaah Terdaftar</div></div>
+    <div class="stat-box"><div class="ico">📅</div><div class="num">12</div><div class="lbl">Kegiatan Aktif</div></div>
+    <div class="stat-box"><div class="ico">📖</div><div class="num">5</div><div class="lbl">Periode DKM</div></div>
+    <div class="stat-box"><div class="ico">🕌</div><div class="num">1990</div><div class="lbl">Tahun Berdiri</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="section-header">
+        <h2 style="font-family:&#39;Amiri&#39;,serif;font-size:1.15rem;color:var(--hijau)">Waktu Sholat Hari Ini</h2>
+        <span style="font-size:.78rem;color:var(--teks3)" id="tgl-hari">Kamis, 14 Mei 2026</span>
+      </div>
+      <div class="sholat-grid" id="sholat-mini"><div class="sholat-item"><div class="sholat-nama">Subuh</div><div class="sholat-waktu">04:17</div></div><div class="sholat-item active-waktu"><div class="sholat-nama">Dzuhur</div><div class="sholat-waktu">12:02</div></div><div class="sholat-item"><div class="sholat-nama">Ashar</div><div class="sholat-waktu">15:27</div></div><div class="sholat-item"><div class="sholat-nama">Maghrib</div><div class="sholat-waktu">18:04</div></div><div class="sholat-item"><div class="sholat-nama">`Isya</div><div class="sholat-waktu">19:15</div></div></div>
+      <a onclick="showPage(&#39;jadwal&#39;)" style="font-size:.8rem;color:var(--hijau);cursor:pointer;font-weight:600">Lihat jadwal lengkap →</a>
+    </div>
+    <div class="card">
+      <div class="section-header">
+        <h2 style="font-family:&#39;Amiri&#39;,serif;font-size:1.15rem;color:var(--hijau)">Kegiatan Terdekat</h2>
+      </div>
+      <div class="kegiatan-list" id="kegiatan-mini"><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">14</div><div class="bln">Mei</div></div><div class="kegiatan-info"><h4>Pengajian Rutin malam Jum'at</h4><p>Pembacaan tawasul,baca Surat Yasiin dan do'a bersam</p><span class="badge-kegiatan badge-rutin">Rutin</span></div></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">17</div><div class="bln">Mei</div></div><div class="kegiatan-info"><h4>Pengajian Rutin Bapak-bapak</h4><p>Kajian Pekanan Bapak-bapak</p><span class="badge-kegiatan badge-rutin">Rutin</span></div></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">17</div><div class="bln">Mei</div></div><div class="kegiatan-info"><h4>Pengajian Rutin Ibu-ibu</h4><p>Kajian Pekanan Ibu-ibu</p><span class="badge-kegiatan badge-rutin">Rutin</span></div></div></div>
+    </div>
+  </div>
+  <hr class="divider">
+  <div class="card" style="margin-top:1rem">
+    <div class="section-header">
+      <h2 style="font-family:&#39;Amiri&#39;,serif;font-size:1.15rem;color:var(--hijau)">Saldo Kas DKM</h2>
+      <span class="pill masuk" style="font-size:.8rem;padding:4px 12px">Update Real-time</span>
+    </div>
+    <div class="kas-summary" id="kas-mini">
+    <div class="kas-stat masuk"><div class="label">Total Pemasukan</div><div class="value">Rp 10.160.000</div></div>
+    <div class="kas-stat keluar"><div class="label">Total Pengeluaran</div><div class="value">Rp 2.185.000</div></div>
+    <div class="kas-stat saldo"><div class="label">Saldo Kas</div><div class="value">Rp 7.975.000</div></div></div>
+    <a onclick="showPage(&#39;keuangan&#39;)" style="font-size:.8rem;color:var(--hijau);cursor:pointer;font-weight:600">Lihat laporan lengkap →</a>
+  </div>
+</div>
+
+<!-- ======== JADWAL SHOLAT ======== -->
+<div class="page" id="page-jadwal">
+  <div class="section-header"><h2>Jadwal Sholat</h2></div>
+  <div class="alert alert-info">📍 Wilayah: Serang Baru, Kabupaten Bekasi — Koordinat: 6.38°S 107.10°E</div>
+  <div class="card" style="margin-bottom:1.25rem">
+    <div id="countdown-wrap" class="countdown-box">
+      <div><div style="font-size:.75rem;color:var(--teks2);font-weight:600">Waktu Sholat Berikutnya</div><div style="font-size:1.1rem;font-weight:700;color:var(--hijau)" id="next-sholat-name">Ashar</div></div>
+      <div style="font-size:1.8rem;font-weight:700;color:var(--hijau);font-variant-numeric:tabular-nums" id="countdown-timer">00:48:05</div>
+    </div>
+    <div class="sholat-grid" id="sholat-full" style="grid-template-columns:repeat(6,1fr)"><div class="sholat-item"><div class="sholat-nama">Subuh</div><div class="sholat-waktu">04:17</div></div><div class="sholat-item"><div class="sholat-nama">Terbit</div><div class="sholat-waktu">05:39</div></div><div class="sholat-item active-waktu"><div class="sholat-nama">Dzuhur</div><div class="sholat-waktu">12:02</div></div><div class="sholat-item"><div class="sholat-nama">Ashar</div><div class="sholat-waktu">15:27</div></div><div class="sholat-item"><div class="sholat-nama">Maghrib</div><div class="sholat-waktu">18:04</div></div><div class="sholat-item"><div class="sholat-nama">`Isya</div><div class="sholat-waktu">19:15</div></div></div>
+  </div>
+  <div class="card">
+    <h3 style="font-weight:600;font-size:.9rem;margin-bottom:.75rem;color:var(--hijau)">📅 Jadwal Bulan Ini</h3>
+    <div style="overflow-x:auto">
+    <table class="trans-table">
+      <thead><tr><th>Tgl</th><th>Subuh</th><th>Terbit</th><th>Dzuhur</th><th>Ashar</th><th>Maghrib</th><th>Isya</th></tr></thead>
+      <tbody id="tabel-sholat"><tr><td><strong>1</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>2</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>3</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>4</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>5</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>6</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>7</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>8</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>9</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>10</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>11</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>12</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>13</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr style="background:#e8f5ee"><td><strong>14</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>15</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>16</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>17</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>18</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>19</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>20</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>21</strong></td><td>04:17</td><td>05:39</td><td>12:02</td><td>15:27</td><td>18:04</td><td>19:15</td></tr><tr><td><strong>22</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>23</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>24</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>25</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>26</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>27</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>28</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>29</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr><tr><td><strong>30</strong></td><td>04:18</td><td>05:40</td><td>12:03</td><td>15:28</td><td>18:05</td><td>19:16</td></tr></tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======== KEGIATAN ======== -->
+<div class="page" id="page-kegiatan">
+  <div class="section-header">
+    <h2>Kegiatan DKM</h2>
+    <button class="btn btn-hijau" id="btn-tambah-kegiatan" style="display: inline-flex;" onclick="showFormKegiatan()">+ Tambah Kegiatan</button>
+  </div>
+  <div id="form-kegiatan" style="display: none;" class="card">
+    <h3 style="font-weight:600;margin-bottom:1rem;color:var(--hijau)">Tambah Kegiatan Baru</h3>
+    <div class="form-row">
+      <div><label>Nama Kegiatan</label><input type="text" id="keg-nama" placeholder="cth: Pengajian Rutin Malam Jumat"></div>
+      <div><label>Tanggal</label><input type="date" id="keg-tanggal"></div>
+    </div>
+    <div class="form-row">
+      <div><label>Waktu</label><input type="time" id="keg-waktu"></div>
+      <div><label>Jenis</label><select id="keg-jenis"><option value="rutin">Rutin</option><option value="khusus">Khusus</option></select></div>
+    </div>
+    <div class="form-row full"><div><label>Keterangan</label><textarea id="keg-ket" rows="2" placeholder="Deskripsi singkat kegiatan..."></textarea></div></div>
+    <div style="display:flex;gap:.75rem">
+      <button class="btn btn-hijau" onclick="simpanKegiatan()">💾 Simpan</button>
+      <button class="btn btn-outline" onclick="document.getElementById(&#39;form-kegiatan&#39;).style.display=&#39;none&#39;">Batal</button>
+    </div>
+  </div>
+  <div class="kegiatan-list" id="kegiatan-full"><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">14</div><div class="bln">Mei</div></div><div class="kegiatan-info" style="flex:1"><h4>Pengajian Rutin malam Jum'at</h4><p>⏰ 18:30 WIB — Pembacaan tawasul,baca Surat Yasiin dan do'a bersam</p><span class="badge-kegiatan badge-rutin">Rutin</span></div><button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(1778742899140)">🗑</button></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">17</div><div class="bln">Mei</div></div><div class="kegiatan-info" style="flex:1"><h4>Pengajian Rutin Bapak-bapak</h4><p>⏰ 18:30 WIB — Kajian Pekanan Bapak-bapak</p><span class="badge-kegiatan badge-rutin">Rutin</span></div><button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(1778743002898)">🗑</button></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">17</div><div class="bln">Mei</div></div><div class="kegiatan-info" style="flex:1"><h4>Pengajian Rutin Ibu-ibu</h4><p>⏰ 09:00 WIB — Kajian Pekanan Ibu-ibu</p><span class="badge-kegiatan badge-rutin">Rutin</span></div><button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(1778743201656)">🗑</button></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">21</div><div class="bln">Mei</div></div><div class="kegiatan-info" style="flex:1"><h4>Pengajian Rutin malam Jum'at</h4><p>⏰ 18:30 WIB — Pembacaan tawasul,baca Surat Yasiin dan do'a bersama</p><span class="badge-kegiatan badge-rutin">Rutin</span></div><button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(1778743088312)">🗑</button></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">24</div><div class="bln">Mei</div></div><div class="kegiatan-info" style="flex:1"><h4>Pengajian Rutin Ibu-ibu</h4><p>⏰ 09:00 WIB — Kajian Pekanan Ibu-ibu</p><span class="badge-kegiatan badge-rutin">Rutin</span></div><button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(1778743182905)">🗑</button></div><div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">24</div><div class="bln">Mei</div></div><div class="kegiatan-info" style="flex:1"><h4>Kerja Bakti persiapan Idul Adha</h4><p>⏰ 07:30 WIB — Kerja Bakti persiapan Sholat Idul Adha dan pemotongan Hewan Qurban</p><span class="badge-kegiatan badge-rutin">Rutin</span></div><button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(1778743289137)">🗑</button></div></div>
+</div>
+
+<!-- ======== PENGURUS ======== -->
+<div class="page" id="page-pengurus">
+  <div class="section-header">
+    <h2>Susunan Pengurus DKM Ar-Rahman</h2>
+    <span style="font-size:.8rem;color:var(--teks2)">Periode 2026 – 2031</span>
+  </div>
+  <div class="alert alert-success" style="margin-bottom:1.25rem">✅ Ketua terpilih hasil musyawarah: <strong>Bpk. Maruloh</strong> — 14 Mei 2026</div>
+  <div class="pengurus-grid" id="pengurus-list">
+    <div class="pengurus-card">
+      <div class="avatar ketua">M</div>
+      <div class="pengurus-nama">Maruloh</div>
+      <div class="pengurus-jabatan">Ketua DKM</div>
+      <span class="jabatan-badge">Ketua</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">YN</div>
+      <div class="pengurus-nama">Yayat Nurhidayat</div>
+      <div class="pengurus-jabatan">Wakil Ketua</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">S1</div>
+      <div class="pengurus-nama">Sekretaris I</div>
+      <div class="pengurus-jabatan">Sekretaris I</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">S2</div>
+      <div class="pengurus-nama">Sekretaris II</div>
+      <div class="pengurus-jabatan">Sekretaris II</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">B1</div>
+      <div class="pengurus-nama">Bendahara I</div>
+      <div class="pengurus-jabatan">Bendahara I</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">B2</div>
+      <div class="pengurus-nama">Bendahara II</div>
+      <div class="pengurus-jabatan">Bendahara II</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">BI</div>
+      <div class="pengurus-nama">Bid. Ibadah</div>
+      <div class="pengurus-jabatan">Bidang Ibadah</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">BP</div>
+      <div class="pengurus-nama">Bid. Pendidikan</div>
+      <div class="pengurus-jabatan">Bidang Pendidikan</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">BS</div>
+      <div class="pengurus-nama">Bid. Sosial</div>
+      <div class="pengurus-jabatan">Bidang Sosial</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">BH</div>
+      <div class="pengurus-nama">Bid. Humas</div>
+      <div class="pengurus-jabatan">Bidang Humas</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">BR</div>
+      <div class="pengurus-nama">Bid. Pemuda</div>
+      <div class="pengurus-jabatan">Bidang Pemuda/Remaja</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div>
+    <div class="pengurus-card">
+      <div class="avatar ">BK</div>
+      <div class="pengurus-nama">Bid. Kebersihan</div>
+      <div class="pengurus-jabatan">Bidang Kebersihan</div>
+      <span class="jabatan-badge">Pengurus</span>
+    </div></div>
+</div>
+
+<!-- ======== KEUANGAN ======== -->
+<div class="page" id="page-keuangan">
+  <div class="section-header">
+    <h2>Laporan Keuangan</h2>
+    <span class="pill masuk" style="padding:4px 12px;font-size:.8rem">Real-time</span>
+  </div>
+  <div class="kas-summary" id="kas-full">
+    <div class="kas-stat masuk"><div class="label">Total Pemasukan</div><div class="value">Rp 10.160.000</div></div>
+    <div class="kas-stat keluar"><div class="label">Total Pengeluaran</div><div class="value">Rp 2.185.000</div></div>
+    <div class="kas-stat saldo"><div class="label">Saldo Kas</div><div class="value">Rp 7.975.000</div></div></div>
+  
+  <div class="grid-2">
+    <div class="card" id="form-kas-wrap" style="display: none;">
+      <h3 style="font-weight:600;margin-bottom:1rem;color:var(--hijau)">Input Transaksi</h3>
+      <div class="form-row">
+        <div><label>Jenis</label><select id="kas-jenis"><option value="masuk">Pemasukan</option><option value="keluar">Pengeluaran</option></select></div>
+        <div><label>Nominal (Rp)</label><input type="number" id="kas-nominal" placeholder="0"></div>
+      </div>
+      <div class="form-row full"><div><label>Keterangan</label><input type="text" id="kas-ket" placeholder="cth: Infaq Jumat, Pembelian ATK..."></div></div>
+      <div class="form-row">
+        <div><label>Tanggal</label><input type="date" id="kas-tanggal"></div>
+        <div><label>Kategori</label>
+          <select id="kas-kategori">
+            <option>Infaq / Sodaqoh</option><option>Donasi</option><option>Zakat</option>
+            <option>Operasional</option><option>Pembangunan</option><option>Kegiatan</option><option>Lainnya</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;gap:.75rem">
+        <button class="btn btn-hijau" onclick="simpanKas()">💾 Simpan</button>
+        <button class="btn btn-outline" onclick="document.getElementById(&#39;form-kas-wrap&#39;).style.display=&#39;none&#39;">Batal</button>
+      </div>
+    </div>
+    <div class="card" id="kas-chart-wrap">
+      <h3 style="font-weight:600;margin-bottom:1rem;color:var(--hijau)">Grafik Pemasukan vs Pengeluaran</h3>
+      <canvas id="kasChart" height="252" style="box-sizing: border-box; display: block; height: 252px; width: 474px;" width="474"></canvas>
+    </div>
+  </div>
+  
+  <div class="card" style="margin-top:1.25rem">
+    <div class="section-header">
+      <h3 style="font-weight:600;color:var(--hijau)">Riwayat Transaksi</h3>
+      <button class="btn btn-hijau btn-tambah-kas" id="btn-tambah-kas" style="display: inline-flex;" onclick="showFormKas()">+ Input Transaksi</button>
+    </div>
+    <div id="alert-kas"></div>
+    <div style="overflow-x:auto">
+    <table class="trans-table" id="tabel-kas">
+      <thead><tr><th>Tanggal</th><th>Keterangan</th><th>Kategori</th><th>Jenis</th><th>Nominal</th><th id="th-aksi" style="">Aksi</th></tr></thead>
+      <tbody id="tbody-kas">
+    <tr><td>9 Mei 2026</td>
+    <td>Infaq Jumat ke-1</td><td>Infaq / Sodaqoh</td>
+    <td><span class="pill masuk">Pemasukan</span></td>
+    <td style="font-weight:600;color:#1a7a2e">+Rp 850.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(1)">🗑</button></td></tr>
+    <tr><td>2 Mei 2026</td>
+    <td>Donasi Pembangunan</td><td>Donasi</td>
+    <td><span class="pill masuk">Pemasukan</span></td>
+    <td style="font-weight:600;color:#1a7a2e">+Rp 2.500.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(3)">🗑</button></td></tr>
+    <tr><td>26 Apr 2026</td>
+    <td>Infaq Jumat</td><td>Infaq / Sodaqoh</td>
+    <td><span class="pill masuk">Pemasukan</span></td>
+    <td style="font-weight:600;color:#1a7a2e">+Rp 720.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(4)">🗑</button></td></tr>
+    <tr><td>19 Apr 2026</td>
+    <td>ATK &amp; Kebutuhan Kantor</td><td>Operasional</td>
+    <td><span class="pill keluar">Pengeluaran</span></td>
+    <td style="font-weight:600;color:#c0392b">-Rp 185.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(5)">🗑</button></td></tr>
+    <tr><td>12 Apr 2026</td>
+    <td>Infaq Jumat</td><td>Infaq / Sodaqoh</td>
+    <td><span class="pill masuk">Pemasukan</span></td>
+    <td style="font-weight:600;color:#1a7a2e">+Rp 690.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(6)">🗑</button></td></tr>
+    <tr><td>5 Apr 2026</td>
+    <td>Kegiatan Isra Mi'raj</td><td>Kegiatan</td>
+    <td><span class="pill keluar">Pengeluaran</span></td>
+    <td style="font-weight:600;color:#c0392b">-Rp 1.200.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(7)">🗑</button></td></tr>
+    <tr><td>30 Mar 2026</td>
+    <td>Zakat Fitrah</td><td>Zakat</td>
+    <td><span class="pill masuk">Pemasukan</span></td>
+    <td style="font-weight:600;color:#1a7a2e">+Rp 5.400.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(8)">🗑</button></td></tr>
+    <tr><td>15 Mar 2026</td>
+    <td>Perlengkapan Ramadan</td><td>Kegiatan</td>
+    <td><span class="pill keluar">Pengeluaran</span></td>
+    <td style="font-weight:600;color:#c0392b">-Rp 800.000</td>
+    <td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(9)">🗑</button></td></tr></tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- ======== SEJARAH ======== -->
+<div class="page active" id="page-sejarah">
+  <div class="section-header"><h2>Sejarah DKM Ar-Rahman</h2></div>
+  <div class="grid-2">
+    <div class="card">
+      <p style="font-size:.9rem;line-height:1.8;color:var(--teks);margin-bottom:1rem">
+        Masjid Ar-Rahman berdiri di jantung Perumahan Kota Mega Regency Blok L, sebagai pusat spiritual dan sosial warga RW.010 Desa Sukaragam, Kecamatan Serang Baru, Kabupaten Bekasi.
+      </p>
+      <p style="font-size:.9rem;line-height:1.8;color:var(--teks);margin-bottom:1rem">
+        Bermula dari mushola kecil yang dibangun secara swadaya oleh para pendiri perumahan, Ar-Rahman terus berkembang menjadi masjid yang mampu menampung ratusan jamaah. Nama <strong>Ar-Rahman</strong> (Yang Maha Pengasih) dipilih sebagai doa dan harapan agar masjid ini senantiasa menjadi tempat yang penuh kasih dan rahmat bagi seluruh warga.
+      </p>
+      <p style="font-size:.9rem;line-height:1.8;color:var(--teks)">
+        DKM Ar-Rahman dibentuk sebagai lembaga yang bertugas mengelola dan memakmurkan masjid, menyelenggarakan berbagai program keagamaan, sosial, dan pendidikan bagi warga sekitar.
+      </p>
+    </div>
+    <div>
+      <h3 style="font-family:&#39;Amiri&#39;,serif;font-size:1.1rem;color:var(--hijau);margin-bottom:1rem">Perjalanan Waktu</h3>
+      <div class="timeline" id="timeline-list">
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">1990</div><div class="tl-konten">Pembangunan mushola pertama secara swadaya oleh warga Blok L Perum Kota Mega Regency.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">1995</div><div class="tl-konten">Mushola resmi ditingkatkan statusnya menjadi masjid dan diberi nama Ar-Rahman atas musyawarah warga.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">2001</div><div class="tl-konten">Renovasi besar pertama: perluasan area sholat utama dan pembangunan tempat wudhu permanen.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">2005</div><div class="tl-konten">Pembentukan Taman Pendidikan Al-Quran (TPA) Ar-Rahman untuk anak-anak warga sekitar.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">2011</div><div class="tl-konten">Pembangunan lantai dua masjid untuk meningkatkan kapasitas jamaah dan ruang kegiatan.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">2015</div><div class="tl-konten">Digitalisasi administrasi DKM, pemasangan sound system, dan AC pada area sholat utama.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">2020</div><div class="tl-konten">Masjid Ar-Rahman aktif membantu distribusi sembako untuk warga terdampak pandemi Covid-19.</div></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">2026</div><div class="tl-konten">Pemilihan Ketua DKM Periode ke-5 secara demokratis. Bpk. Maruloh terpilih dengan 99 suara dari 263 suara yang masuk.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======== KETUA DKM ======== -->
+<div class="page" id="page-ketua">
+  <div class="section-header">
+    <h2>Daftar Ketua DKM Ar-Rahman</h2>
+    <span style="font-size:.8rem;color:var(--teks2)">Dari Periode ke Periode</span>
+  </div>
+  <div class="ketua-list" id="ketua-list">
+    <div class="ketua-item">
+      <div class="ketua-no ">1</div>
+      <div style="flex:1"><div class="ketua-nama">(Ketua Periode 1)</div><div class="ketua-periode">Periode: 1990 – 1995</div></div>
+      
+    </div>
+    <div class="ketua-item">
+      <div class="ketua-no ">2</div>
+      <div style="flex:1"><div class="ketua-nama">(Ketua Periode 2)</div><div class="ketua-periode">Periode: 1995 – 2001</div></div>
+      
+    </div>
+    <div class="ketua-item">
+      <div class="ketua-no ">3</div>
+      <div style="flex:1"><div class="ketua-nama">(Ketua Periode 3)</div><div class="ketua-periode">Periode: 2001 – 2011</div></div>
+      
+    </div>
+    <div class="ketua-item">
+      <div class="ketua-no ">4</div>
+      <div style="flex:1"><div class="ketua-nama">(Ketua Periode 4)</div><div class="ketua-periode">Periode: 2011 – 2026</div></div>
+      
+    </div>
+    <div class="ketua-item">
+      <div class="ketua-no aktif">5</div>
+      <div style="flex:1"><div class="ketua-nama">Maruloh</div><div class="ketua-periode">Periode: 2026 – 2031</div></div>
+      <span class="pill masuk" style="padding:4px 12px">Aktif</span>
+    </div></div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <h2>🔐 Login Admin</h2>
+    <p>Khusus Pengurus Inti DKM Ar-Rahman</p>
+    <div id="login-alert"></div>
+    <div style="margin-bottom:.75rem"><label>Username</label><input type="text" id="login-user" placeholder="username admin"></div>
+    <div style="margin-bottom:1.25rem"><label>Password</label><input type="password" id="login-pass" placeholder="••••••••"></div>
+    <div style="display:flex;gap:.75rem">
+      <button class="btn btn-hijau" style="flex:1" onclick="doLogin()">Masuk</button>
+      <button class="btn btn-outline" onclick="closeLogin()">Batal</button>
+    </div>
+    <p style="font-size:.72rem;color:var(--teks3);margin-top:.75rem;text-align:center">Demo: admin / dkm2026</p>
+  </div>
+</div>
+
+<script src="./DKM Ar-Rahman - Masjid Ar-Rahman Blok L_files/chart.umd.min.js.download"></script>
+<script>
+// ===================== DATA =====================
+let isAdmin = false;
+const ADMIN_USER = 'admin', ADMIN_PASS = 'dkm2026';
+
+const dataKas = [
+  {id:1,tgl:'2026-05-09',ket:'Infaq Jumat ke-1',kat:'Infaq / Sodaqoh',jenis:'masuk',nominal:850000},
+  {id:2,tgl:'2026-05-09',ket:'Listrik & Air Mei',kat:'Operasional',jenis:'keluar',nominal:340000},
+  {id:3,tgl:'2026-05-02',ket:'Donasi Pembangunan',kat:'Donasi',jenis:'masuk',nominal:2500000},
+  {id:4,tgl:'2026-04-26',ket:'Infaq Jumat',kat:'Infaq / Sodaqoh',jenis:'masuk',nominal:720000},
+  {id:5,tgl:'2026-04-19',ket:'ATK & Kebutuhan Kantor',kat:'Operasional',jenis:'keluar',nominal:185000},
+  {id:6,tgl:'2026-04-12',ket:'Infaq Jumat',kat:'Infaq / Sodaqoh',jenis:'masuk',nominal:690000},
+  {id:7,tgl:'2026-04-05',ket:'Kegiatan Isra Mi\'raj',kat:'Kegiatan',jenis:'keluar',nominal:1200000},
+  {id:8,tgl:'2026-03-30',ket:'Zakat Fitrah',kat:'Zakat',jenis:'masuk',nominal:5400000},
+  {id:9,tgl:'2026-03-15',ket:'Perlengkapan Ramadan',kat:'Kegiatan',jenis:'keluar',nominal:800000},
+];
+
+const dataKegiatan = [
+  {id:1,nama:'Pengajian Rutin Malam Jumat',tgl:'2026-05-21',waktu:'19:30',jenis:'rutin',ket:'Kajian kitab, dibimbing Ustadz setempat'},
+  {id:2,nama:'Majlis Taklim Ibu-Ibu',tgl:'2026-05-18',waktu:'08:00',jenis:'rutin',ket:'Setiap Senin pagi, bertempat di serambi masjid'},
+  {id:3,nama:'Kerja Bakti Masjid',tgl:'2026-05-17',waktu:'07:00',jenis:'khusus',ket:'Pembersihan & perawatan fasilitas masjid'},
+  {id:4,nama:'Khatam Al-Quran',tgl:'2026-06-01',waktu:'09:00',jenis:'khusus',ket:'Program khatam bersama untuk remaja masjid'},
+  {id:5,nama:'Sholat Idul Adha',tgl:'2026-06-16',waktu:'06:00',jenis:'khusus',ket:'Sholat Id & Qurban bersama seluruh jamaah'},
+];
+
+const dataPengurus = [
+  {nama:'Maruloh',jabatan:'Ketua DKM',inisial:'M',tipe:'ketua'},
+  {nama:'Yayat Nurhidayat',jabatan:'Wakil Ketua',inisial:'YN',tipe:''},
+  {nama:'Sekretaris I',jabatan:'Sekretaris I',inisial:'S1',tipe:''},
+  {nama:'Sekretaris II',jabatan:'Sekretaris II',inisial:'S2',tipe:''},
+  {nama:'Bendahara I',jabatan:'Bendahara I',inisial:'B1',tipe:''},
+  {nama:'Bendahara II',jabatan:'Bendahara II',inisial:'B2',tipe:''},
+  {nama:'Bid. Ibadah',jabatan:'Bidang Ibadah',inisial:'BI',tipe:''},
+  {nama:'Bid. Pendidikan',jabatan:'Bidang Pendidikan',inisial:'BP',tipe:''},
+  {nama:'Bid. Sosial',jabatan:'Bidang Sosial',inisial:'BS',tipe:''},
+  {nama:'Bid. Humas',jabatan:'Bidang Humas',inisial:'BH',tipe:''},
+  {nama:'Bid. Pemuda',jabatan:'Bidang Pemuda/Remaja',inisial:'BR',tipe:''},
+  {nama:'Bid. Kebersihan',jabatan:'Bidang Kebersihan',inisial:'BK',tipe:''},
+];
+
+const dataKetua = [
+  {no:1,nama:'(Ketua Periode 1)',periode:'1990 – 1995',aktif:false},
+  {no:2,nama:'(Ketua Periode 2)',periode:'1995 – 2001',aktif:false},
+  {no:3,nama:'(Ketua Periode 3)',periode:'2001 – 2011',aktif:false},
+  {no:4,nama:'(Ketua Periode 4)',periode:'2011 – 2026',aktif:false},
+  {no:5,nama:'Maruloh',periode:'2026 – 2031',aktif:true},
+];
+
+const dataSejarah = [
+  {thn:'1990',txt:'Pembangunan mushola pertama secara swadaya oleh warga Blok L Perum Kota Mega Regency.'},
+  {thn:'1995',txt:'Mushola resmi ditingkatkan statusnya menjadi masjid dan diberi nama Ar-Rahman atas musyawarah warga.'},
+  {thn:'2001',txt:'Renovasi besar pertama: perluasan area sholat utama dan pembangunan tempat wudhu permanen.'},
+  {thn:'2005',txt:'Pembentukan Taman Pendidikan Al-Quran (TPA) Ar-Rahman untuk anak-anak warga sekitar.'},
+  {thn:'2011',txt:'Pembangunan lantai dua masjid untuk meningkatkan kapasitas jamaah dan ruang kegiatan.'},
+  {thn:'2015',txt:'Digitalisasi administrasi DKM, pemasangan sound system, dan AC pada area sholat utama.'},
+  {thn:'2020',txt:'Masjid Ar-Rahman aktif membantu distribusi sembako untuk warga terdampak pandemi Covid-19.'},
+  {thn:'2026',txt:'Pemilihan Ketua DKM Periode ke-5 secara demokratis. Bpk. Maruloh terpilih dengan 99 suara dari 263 suara yang masuk.'},
+];
+
+// ===================== JADWAL SHOLAT =====================
+function getSholat(tgl) {
+  const d = tgl || new Date();
+  const dayOfYear = Math.floor((d - new Date(d.getFullYear(),0,0)) / 86400000);
+  const subuhBase = 4*60+10, terbitBase=5*60+32, dzuhurBase=11*60+55, asharBase=15*60+20, maghribBase=17*60+57, isyaBase=19*60+8;
+  const var1 = Math.round(Math.sin(dayOfYear * Math.PI / 365) * 8);
+  const toT = m => `${String(Math.floor(m/60)).padStart(2,'0')}:${String(m%60).padStart(2,'0')}`;
+  return [
+    {nama:'Subuh',waktu:toT(subuhBase+var1)},
+    {nama:'Terbit',waktu:toT(terbitBase+var1)},
+    {nama:'Dzuhur',waktu:toT(dzuhurBase+var1)},
+    {nama:'Ashar',waktu:toT(asharBase+var1)},
+    {nama:'Maghrib',waktu:toT(maghribBase+var1)},
+    {nama:'\`Isya',waktu:toT(isyaBase+var1)},
+  ];
+}
+
+function getActiveSholat(sholat) {
+  const now = new Date(), hm = now.getHours()*60+now.getMinutes();
+  for(let i=sholat.length-1;i>=0;i--) {
+    const [h,m] = sholat[i].waktu.split(':').map(Number);
+    if(hm >= h*60+m) return i;
+  }
+  return -1;
+}
+
+function getNextSholat(sholat) {
+  const now = new Date(), hm = now.getHours()*60+now.getMinutes();
+  for(let i=0;i<sholat.length;i++) {
+    const [h,m] = sholat[i].waktu.split(':').map(Number);
+    if(h*60+m > hm) return i;
+  }
+  return 0;
+}
+
+function renderSholatMini() {
+  const s = getSholat(); const act = getActiveSholat(s);
+  const mini = s.filter(x=>x.nama!=='Terbit');
+  document.getElementById('sholat-mini').innerHTML = mini.map((x,i)=>{
+    const isAct = s.indexOf(x)===act;
+    return `<div class="sholat-item${isAct?' active-waktu':''}"><div class="sholat-nama">${x.nama}</div><div class="sholat-waktu">${x.waktu}</div></div>`;
+  }).join('');
+  const d = new Date();
+  document.getElementById('tgl-hari').textContent = d.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+}
+
+function renderSholatFull() {
+  const s = getSholat(); const act = getActiveSholat(s); const nxt = getNextSholat(s);
+  document.getElementById('sholat-full').innerHTML = s.map((x,i)=>{
+    const isAct = i===act;
+    return `<div class="sholat-item${isAct?' active-waktu':''}"><div class="sholat-nama">${x.nama}</div><div class="sholat-waktu">${x.waktu}</div></div>`;
+  }).join('');
+  document.getElementById('next-sholat-name').textContent = s[nxt].nama;
+  renderTabelSholat();
+}
+
+function renderTabelSholat() {
+  const d = new Date(); const rows = [];
+  for(let i=1;i<=30;i++) {
+    const dd = new Date(d.getFullYear(),d.getMonth(),i);
+    const s = getSholat(dd);
+    rows.push(`<tr${i===d.getDate()?' style="background:#e8f5ee"':''}><td><strong>${i}</strong></td>${s.map(x=>`<td>${x.waktu}</td>`).join('')}</tr>`);
+  }
+  document.getElementById('tabel-sholat').innerHTML = rows.join('');
+}
+
+function updateCountdown() {
+  const s = getSholat(); const nxt = getNextSholat(s);
+  const [h,m] = s[nxt].waktu.split(':').map(Number);
+  const now = new Date();
+  let diff = (h*60+m)*60 - (now.getHours()*3600+now.getMinutes()*60+now.getSeconds());
+  if(diff<0) diff += 86400;
+  const hh = Math.floor(diff/3600), mm = Math.floor((diff%3600)/60), ss = diff%60;
+  document.getElementById('countdown-timer').textContent = `${String(hh).padStart(2,'0')}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;
+  document.getElementById('next-sholat-name').textContent = s[nxt].nama;
+}
+
+// ===================== RENDER =====================
+function renderKegiatanMini() {
+  const sorted = [...dataKegiatan].sort((a,b)=>new Date(a.tgl)-new Date(b.tgl)).slice(0,3);
+  document.getElementById('kegiatan-mini').innerHTML = sorted.map(k=>{
+    const d = new Date(k.tgl); const tgl=d.getDate(); const bln=d.toLocaleDateString('id-ID',{month:'short'});
+    return `<div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">${tgl}</div><div class="bln">${bln}</div></div><div class="kegiatan-info"><h4>${k.nama}</h4><p>${k.ket}</p><span class="badge-kegiatan badge-${k.jenis}">${k.jenis==='rutin'?'Rutin':'Khusus'}</span></div></div>`;
+  }).join('');
+}
+
+function renderKegiatanFull() {
+  document.getElementById('btn-tambah-kegiatan').style.display = isAdmin?'inline-flex':'none';
+  const sorted = [...dataKegiatan].sort((a,b)=>new Date(a.tgl)-new Date(b.tgl));
+  document.getElementById('kegiatan-full').innerHTML = sorted.map(k=>{
+    const d = new Date(k.tgl); const tgl=d.getDate(); const bln=d.toLocaleDateString('id-ID',{month:'short'});
+    return `<div class="kegiatan-item"><div class="kegiatan-tanggal"><div class="tgl">${tgl}</div><div class="bln">${bln}</div></div><div class="kegiatan-info" style="flex:1"><h4>${k.nama}</h4><p>⏰ ${k.waktu} WIB — ${k.ket}</p><span class="badge-kegiatan badge-${k.jenis}">${k.jenis==='rutin'?'Rutin':'Khusus'}</span></div>${isAdmin?`<button class="btn btn-merah" style="padding:4px 10px;font-size:.75rem" onclick="hapusKegiatan(${k.id})">🗑</button>`:''}</div>`;
+  }).join('');
+}
+
+function renderPengurus() {
+  document.getElementById('pengurus-list').innerHTML = dataPengurus.map(p=>`
+    <div class="pengurus-card">
+      <div class="avatar ${p.tipe}">${p.inisial}</div>
+      <div class="pengurus-nama">${p.nama}</div>
+      <div class="pengurus-jabatan">${p.jabatan}</div>
+      <span class="jabatan-badge">${p.tipe==='ketua'?'Ketua':'Pengurus'}</span>
+    </div>`).join('');
+}
+
+function hitungKas() {
+  const masuk = dataKas.filter(x=>x.jenis==='masuk').reduce((s,x)=>s+x.nominal,0);
+  const keluar = dataKas.filter(x=>x.jenis==='keluar').reduce((s,x)=>s+x.nominal,0);
+  return {masuk,keluar,saldo:masuk-keluar};
+}
+
+function formatRp(n) { return 'Rp '+n.toLocaleString('id-ID'); }
+
+function renderKasSummary(id) {
+  const {masuk,keluar,saldo} = hitungKas();
+  document.getElementById(id).innerHTML = `
+    <div class="kas-stat masuk"><div class="label">Total Pemasukan</div><div class="value">${formatRp(masuk)}</div></div>
+    <div class="kas-stat keluar"><div class="label">Total Pengeluaran</div><div class="value">${formatRp(keluar)}</div></div>
+    <div class="kas-stat saldo"><div class="label">Saldo Kas</div><div class="value">${formatRp(saldo)}</div></div>`;
+}
+
+function renderTabelKas() {
+  const sorted = [...dataKas].sort((a,b)=>new Date(b.tgl)-new Date(a.tgl));
+  document.getElementById('tbody-kas').innerHTML = sorted.map(k=>`
+    <tr><td>${new Date(k.tgl).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'})}</td>
+    <td>${k.ket}</td><td>${k.kat}</td>
+    <td><span class="pill ${k.jenis}">${k.jenis==='masuk'?'Pemasukan':'Pengeluaran'}</span></td>
+    <td style="font-weight:600;color:${k.jenis==='masuk'?'#1a7a2e':'#c0392b'}">${k.jenis==='masuk'?'+':'-'}${formatRp(k.nominal)}</td>
+    ${isAdmin?`<td><button class="btn btn-merah" style="padding:3px 8px;font-size:.72rem" onclick="hapusKas(${k.id})">🗑</button></td>`:''}</tr>`).join('');
+  document.getElementById('th-aksi').style.display = isAdmin?'':'none';
+}
+
+let kasChartInst = null;
+function renderKasChart() {
+  const ctx = document.getElementById('kasChart');
+  const labels = ['Mar','Apr','Mei'];
+  const masukData = [5400000,1410000,3350000];
+  const keluarData = [800000,2185000,340000];
+  if(kasChartInst) kasChartInst.destroy();
+  kasChartInst = new Chart(ctx,{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Pemasukan',data:masukData,backgroundColor:'#2d7a5266',borderColor:'#1a5c3a',borderWidth:1.5},
+      {label:'Pengeluaran',data:keluarData,backgroundColor:'#e74c3c44',borderColor:'#c0392b',borderWidth:1.5},
+    ]},
+    options:{responsive:true,plugins:{legend:{labels:{font:{size:11}}}},scales:{y:{ticks:{callback:v=>v>=1000000?v/1000000+'jt':v>=1000?v/1000+'rb':v,font:{size:10}}}}}
+  });
+}
+
+function renderSejarah() {
+  document.getElementById('timeline-list').innerHTML = dataSejarah.map(s=>`
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-tahun">${s.thn}</div><div class="tl-konten">${s.txt}</div></div>`).join('');
+}
+
+function renderKetua() {
+  document.getElementById('ketua-list').innerHTML = dataKetua.map(k=>`
+    <div class="ketua-item">
+      <div class="ketua-no ${k.aktif?'aktif':''}">${k.no}</div>
+      <div style="flex:1"><div class="ketua-nama">${k.nama}</div><div class="ketua-periode">Periode: ${k.periode}</div></div>
+      ${k.aktif?'<span class="pill masuk" style="padding:4px 12px">Aktif</span>':''}
+    </div>`).join('');
+}
+
+// ===================== NAV =====================
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.getElementById('nav-'+p).classList.add('active');
+  if(p==='jadwal') { renderSholatFull(); renderTabelSholat(); }
+  if(p==='kegiatan') renderKegiatanFull();
+  if(p==='keuangan') { renderKasSummary('kas-full'); renderTabelKas(); renderKasChart(); document.getElementById('btn-tambah-kas').style.display=isAdmin?'inline-flex':'none'; }
+  if(p==='sejarah') renderSejarah();
+  if(p==='ketua') renderKetua();
+  if(p==='pengurus') renderPengurus();
+}
+
+// ===================== LOGIN =====================
+function showLogin() { document.getElementById('loginModal').classList.add('show'); }
+function closeLogin() { document.getElementById('loginModal').classList.remove('show'); }
+function doLogin() {
+  const u=document.getElementById('login-user').value, p=document.getElementById('login-pass').value;
+  if(u===ADMIN_USER&&p===ADMIN_PASS) {
+    isAdmin=true; closeLogin();
+    document.getElementById('adminBar').style.display='flex';
+    document.getElementById('nav-login').textContent='✅ Admin';
+    document.getElementById('nav-login').style.background='#27ae60';
+    // re-render current page
+    const cur = document.querySelector('.page.active').id.replace('page-','');
+    if(cur) showPage(cur);
+  } else {
+    document.getElementById('login-alert').innerHTML='<div class="alert" style="background:#f8d7da;color:#721c24;border:1px solid #f5c6cb;border-radius:8px;padding:.5rem .75rem;font-size:.8rem">Username atau password salah</div>';
+  }
+}
+function logout() {
+  isAdmin=false;
+  document.getElementById('adminBar').style.display='none';
+  document.getElementById('nav-login').textContent='🔐 Admin';
+  document.getElementById('nav-login').style.background='';
+  const cur = document.querySelector('.page.active').id.replace('page-','');
+  if(cur) showPage(cur);
+}
+
+// ===================== FORMS =====================
+function showFormKegiatan() { document.getElementById('form-kegiatan').style.display='block'; }
+function simpanKegiatan() {
+  const nama=document.getElementById('keg-nama').value, tgl=document.getElementById('keg-tanggal').value;
+  const waktu=document.getElementById('keg-waktu').value, jenis=document.getElementById('keg-jenis').value;
+  const ket=document.getElementById('keg-ket').value;
+  if(!nama||!tgl) return;
+  const id = Date.now();
+  dataKegiatan.push({id,nama,tgl,waktu,jenis,ket});
+  document.getElementById('form-kegiatan').style.display='none';
+  renderKegiatanFull(); renderKegiatanMini();
+}
+function hapusKegiatan(id) {
+  const i = dataKegiatan.findIndex(x=>x.id===id);
+  if(i>-1) dataKegiatan.splice(i,1);
+  renderKegiatanFull(); renderKegiatanMini();
+}
+
+function showFormKas() {
+  document.getElementById('form-kas-wrap').style.display='block';
+  document.getElementById('kas-tanggal').value = new Date().toISOString().split('T')[0];
+}
+function simpanKas() {
+  const jenis=document.getElementById('kas-jenis').value, nominal=parseInt(document.getElementById('kas-nominal').value)||0;
+  const ket=document.getElementById('kas-ket').value, tgl=document.getElementById('kas-tanggal').value;
+  const kat=document.getElementById('kas-kategori').value;
+  if(!ket||!nominal) return;
+  const id = Date.now();
+  dataKas.unshift({id,tgl,ket,kat,jenis,nominal});
+  document.getElementById('form-kas-wrap').style.display='none';
+  document.getElementById('kas-nominal').value='';
+  document.getElementById('kas-ket').value='';
+  renderKasSummary('kas-full'); renderKasSummary('kas-mini'); renderTabelKas(); renderKasChart();
+  document.getElementById('alert-kas').innerHTML='<div class="alert alert-success">✅ Transaksi berhasil disimpan!</div>';
+  setTimeout(()=>document.getElementById('alert-kas').innerHTML='',3000);
+}
+function hapusKas(id) {
+  const i=dataKas.findIndex(x=>x.id===id);
+  if(i>-1) dataKas.splice(i,1);
+  renderKasSummary('kas-full'); renderKasSummary('kas-mini'); renderTabelKas(); renderKasChart();
+}
+
+// ===================== INIT =====================
+renderSholatMini();
+renderKegiatanMini();
+renderKasSummary('kas-mini');
+setInterval(updateCountdown,1000);
+</script>
+
+
+</body></html>
